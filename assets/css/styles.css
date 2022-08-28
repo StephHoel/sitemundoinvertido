@@ -62,6 +62,10 @@
   transition: 1s;
 }
 
+body {
+  background: var(--page-background);
+}
+
 h1, h2, h3 {
   font-family: var(--featured-font-family);
   font-size: 3rem;
@@ -74,12 +78,15 @@ p {
   color: var(--highlight-color);
 }
 
-p, input, textarea, label {
-  font-family: 'Libre Baskerville', serif;
+p,
+input,
+textarea,
+label {
+  font-family: "Libre Baskerville", serif;
 }
 
 button {
-  padding: 16px, 32px;
+  padding: 16px 32px;
   background-color: transparent;
   font-weight: 900;
   font-family: var(--featured-font-family);
@@ -89,13 +96,34 @@ button {
   transition: background 1s;
 }
 
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--page-background) no-repeat,
+    url("../images/backgrounds/florest.png") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
 input, textarea {
   border: 2px solid var(--primary-color-contrast);
   background-color: var(--field-background-color);
   color: var(--primary-color-contrast);
   padding: 8px;
+}
+
+input, textarea {
   margin-bottom: 24px;
-  font-size: 1rem;
 }
 
 label {
@@ -107,7 +135,7 @@ input:focus-visible, textarea:focus-visible {
   border-color: black;
 }
 
-/***  HEADER STYLES ***/
+/*** HEADER STYLES ***/
 header {
   background-color: var(--header-background-color);
   min-height: 850px;
@@ -142,7 +170,7 @@ header::before {
 }
 
 .header-content p {
-  padding: 30px 0 50px;
+  margin: 30px 0 50px;
 }
 
 .header-content button {
@@ -155,7 +183,7 @@ header::before {
   color: var(--primary-color-contrast);
 }
 
-/***  WORLD CHARACTERS STYLES ***/
+/*** WORLD CHARACTERS STYLES ***/
 .world-characters {
   width: 100%;
   max-width: 900px;
@@ -165,10 +193,10 @@ header::before {
 .world-characters#top-characters {
   height: 100%;
   background-color: var(--character-top-image-color);
-  bottom: -3;
+  bottom: -3px;
 
+  mask: var(--character-top-image-src) bottom / contain no-repeat;
   -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
-  mask: var(--character-top-image-src) bottom / 100% no-repeat;
 }
 
 .world-characters#bottom-characters {
@@ -182,34 +210,14 @@ header::before {
   -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
 }
 
-/*** MAIN STYLES ***/
-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-main::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: var(--page-background) no-repeat,
-    url("../images/backgrounds/florest.png") no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
-
 /*** SECTIONS STYLES ***/
-
 section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 95px;
 }
 
-/*** Section 01 Inverted World ***/
+/* Section 01 - Inverted World */
 .container {
   max-width: 1200px;
 }
@@ -226,7 +234,7 @@ section {
   max-width: 300px;
 }
 
-/***  Section 02 - Stranger Things Trailer ***/
+/* Section 02 - Stranger Things Trailer */
 #section-stranger-things-trailer .section-texts {
   width: 50%;
   text-align: right;
@@ -361,7 +369,6 @@ section {
 }
 
 /*** FOOTER STYLES ***/
-
 footer {
   padding: 60px 0;
   background-color: var(--footer-background-color);
@@ -378,8 +385,7 @@ footer p {
   margin-bottom: 24px;
 }
 
-footer::before,
-footer::after {
+footer::before, footer::after {
   content: "";
   width: 300px;
   height: 200px;

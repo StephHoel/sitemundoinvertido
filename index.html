@@ -7,6 +7,9 @@
     <title>Mundo Invertido | Semana Front-end</title>
 
     <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin="anonymous">-->
+
   </head>
   <body class="light-theme" aria-label="O site está utilizando o tema light" role="body">
     <header aria-label="Cabeçalho da página.">
@@ -105,20 +108,26 @@
           <div class="form-container">
             <form>
               <label for="name">Nome Completo</label>
-              <input type="text" name="name" id="txtName">
+              <input type="text" name="name" id="txtName" required>
+              <div id="vName"></div>
           
               <label for="email">E-mail</label>
-              <input type="email" name="email" id="txtEmail">
+              <input type="email" name="email" id="txtEmail" required>
+              <div id="vEmail"></div>
           
               <label for="level">Level</label>
-              <input type="number" name="level" id="txtLevel">
+              <input type="number" name="level" id="txtLevel" required>
+              <div id="vLevel"></div>
           
               <label for="character">Personagem</label>
-              <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
-            
+              <textarea name="character" cols="30" rows="10" id="txtCharacter" required></textarea>
+              <div id="vCharacter"></div>
+              
               <button type="button" id="btnSubscribe">Me inscrever</button>
+              <br>
+              <div id="vSubscribe"></div>
 
-              <ul id="subscriptions"></ul>
+              <div id="subscriptions"></div>
             </form>
           </div>
         </div>
